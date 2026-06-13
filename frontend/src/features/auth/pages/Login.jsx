@@ -97,7 +97,10 @@ const Login = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/auth/login`,
-        formData
+        {
+          ...formData,
+          role: selectedRole,
+        }
       );
 
       localStorage.setItem("name", response.data.name);
@@ -130,9 +133,12 @@ const Login = () => {
 
       <div className="bg-white rounded-2xl shadow-2xl p-8">
 
-        <h2 className="text-3xl font-extrabold text-center mb-6">
-          Election Poll Login
+        <h2 className="text-3xl text-center mb-1">
+          Welcome Back
         </h2>
+        <p className="text-center text-gray-400 mb-5">
+          Sign in to your account.
+        </p>
 
         <div className="flex mb-2 bg-gray-100 rounded-lg overflow-hidden">
           {["voter", "candidate", "admin"].map((r) => (

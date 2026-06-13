@@ -13,6 +13,12 @@ h1, h3, h2 {
   font-weight: 750;
 }
 
+#home h2 {
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .homepage h1 {
   font-family: "Inter Tight", sans-serif;
   font-weight: 800;
@@ -131,11 +137,27 @@ html {
 }
 
 @keyframes dots-flicker {
-  0% { opacity: 0.17; }
-  50% { opacity: 0.27; }
-  100% { opacity: 0.15; }
+  0% {
+    opacity: 0.08;
+  }
+
+  25% {
+    opacity: 0.20;
+  }
+
+  50% {
+    opacity: 0.29;
+  }
+
+  75% {
+    opacity: 0.20;
+  }
+
+  100% {
+    opacity: 0.08;
+  }
 }
 
 .animate-dots {
-  animation: dots-flicker 6s ease-in-out infinite;
+  animation: dots-flicker 5s infinite ease-in-out;
 }

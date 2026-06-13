@@ -138,7 +138,7 @@ const Register = () => {
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
 
         <h2 className="text-3xl font-bold text-center mb-6">
-          Election Poll Register
+          Create Your Account
         </h2>
 
         <div className="flex mb-2 bg-gray-100 rounded-lg overflow-hidden">
@@ -204,7 +204,7 @@ const Register = () => {
 
           <div className="relative">
           <input
-            type={showPassword ? "password" : "text"}
+            type={showPass ? "password" : "text"}
             name="confirmPassword"
             placeholder="Confirm Password"
             className="w-full border border-gray-400 rounded-lg px-4 py-3 pr-12

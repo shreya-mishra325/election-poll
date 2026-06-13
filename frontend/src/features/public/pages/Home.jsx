@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { ShieldCheck, BarChart3, Scale } from "lucide-react";
+import IdentityCardSection from "./IdentityCardSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -18,10 +19,11 @@ export default function Home() {
 }, []);
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden">
+    <main id="home" className="relative min-h-screen overflow-x-hidden">
     <section className="relative min-h-screen flex items-center px-6 text-white overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
-    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle,white_1px,transparent_1px)] bg-[size:24px_24px]" />
+    <div className="absolute inset-0 animate-dots bg-[radial-gradient(circle,white_1px,transparent_1px)] bg-[size:24px_24px]"/>
+    <div className="absolute inset-0 wave-mask" />
     <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
       <motion.div
         className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 max-w-xl mb--8"
@@ -349,6 +351,9 @@ export default function Home() {
         </div>
       </div>
     </section>
+
+  <IdentityCardSection />
+
   <section id="about" className="py-24 bg-gray-50">
   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
     <motion.div

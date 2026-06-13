@@ -144,6 +144,7 @@ export default function Header() {
                   <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className={navLinkStyle}>
                     Login
                   </Link>
+
                   <Link to="/register" onClick={() => setIsMobileMenuOpen(false)} className={navLinkStyle}>
                     Register
                   </Link>
@@ -154,6 +155,24 @@ export default function Header() {
                 <Link to="/voter" onClick={() => setIsMobileMenuOpen(false)} className={navLinkStyle}>
                   Dashboard
                 </Link>
+              )}
+
+              {token && role === "candidate" && (
+                <Link to="/candidate" onClick={() => setIsMobileMenuOpen(false)} className={navLinkStyle}>
+                  My Votes
+                </Link>
+              )}
+
+              {token && role === "admin" && (
+                <>
+                  <Link to="/admin" onClick={() => setIsMobileMenuOpen(false)} className={navLinkStyle}>
+                    Admin Panel
+                  </Link>
+
+                  <Link to="/new-election" onClick={() => setIsMobileMenuOpen(false)} className={navLinkStyle}>
+                    New Election
+                  </Link>
+                </>
               )}
 
               {token && (

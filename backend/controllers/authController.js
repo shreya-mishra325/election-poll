@@ -39,10 +39,9 @@ try{
 
 const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
 
     console.log("Email entered:", email);
-
     const user = await User.findOne({
       email: email.toLowerCase()
     });
@@ -60,6 +59,12 @@ const login = async (req, res) => {
     if (!isMatch) {
       console.log("Password incorrect");
       return res.status(401).json({ message: "Invalid Credentials!" });
+    }
+    
+    if (user.role.toLowerCase() !== role.toLowerCase()) {
+      return res.status(403).json({
+        message: `This account is not registered as ${role}`
+      });
     }
 
     res.json({
